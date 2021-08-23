@@ -71,7 +71,7 @@ The first parameter to find_package() depends on the Conan recipe (I guess). For
 for "catch2/2.13.3" we need to use "find_package(Catch2 REQUIRED)", but for "fmt/6.2.0" we need to use
 "find_package(fmt REQUIRED)".
 
-In case of dount, after the "conan install" has been reexecuted, you can take a look at the generated files "*Targets.cmake",
+In case of doubt, after the "conan install" has been reexecuted, you can take a look at the generated files "*Targets.cmake",
 the prefix of those files is the parameter needed for find_package().
 
 But that's not all. We also need to know the CMake target that find_package() exports in order to use it in the corresponding
@@ -104,7 +104,7 @@ openssl/1.1.1i
 openssl/1.1.1j
 openssl/1.1.1k
 ```
-We select, for example, "openssl/1.1.1k" and add ito to conanfile.txt:
+We select, for example, "openssl/1.1.1k" and add it to conanfile.txt:
 ```
 [requires]
 catch2/2.13.3
