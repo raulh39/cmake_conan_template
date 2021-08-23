@@ -35,12 +35,15 @@ In a nutshell:
 ```
 mkdir build
 cd build
-conan install .. -b missing
+conan install .. -b missing -s build_type=Debug
 
 cmake .. -GNinja -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake
-cmake --build . --config Debug
+cmake --build .
 ```
-Of course, the CMake generator shown, Ninja, is just one example. You can use any one you like.
+The flag "-s build_type=Debug" passed to conan will be stored in conan_toolchain.cmake, so 
+"cmake --build ." will also compile in debug mode.
+
+The CMake generator shown, "-GNinja", is just one example. You can use any one you like.
 
 Whenever you modify the contents of the file `conanfile.txt` you should execute again
 ```
